@@ -1,3 +1,5 @@
+package join;
+
 public class JoinDemo2 {
 
     static int r1 = 0;

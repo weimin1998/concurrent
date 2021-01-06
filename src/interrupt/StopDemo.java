@@ -1,6 +1,10 @@
+package interrupt;
+
 public class StopDemo {
 
-    //两阶段终止模式
+
+    // 两阶段终止模式
+    // 用打断标记 实现
     public static void main(String[] args) throws InterruptedException {
         // 在一个线程中优雅的停止其他线程（给一个料理后事的机会）
 

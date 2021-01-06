@@ -1,3 +1,5 @@
+package join;
+
 public class JoinDemo {
     static int r = 0;
     public static void main(String[] args) throws InterruptedException {

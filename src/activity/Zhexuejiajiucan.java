@@ -1,5 +1,7 @@
 package activity;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * 死锁-哲学家就餐
  *
@@ -46,7 +48,8 @@ class Zhexuejia extends Thread{
     @Override
     public void run() {
         while (true){
-            synchronized (left){
+            //synchronized  会死锁
+            /*synchronized (left){
                 synchronized (right){
                     try {
                         Thread.sleep(1000);
@@ -55,7 +58,30 @@ class Zhexuejia extends Thread{
                     }
                     eat();
                 }
+            }*/
+
+            // 拿到左筷子
+            if(left.tryLock()){
+                try{
+                    // 拿到右筷子
+                    if(right.tryLock()){
+                        try {
+                            Thread.sleep(1000);
+                            eat();
+                        }catch (InterruptedException e){
+                            e.printStackTrace();
+                        }
+                            finally {
+                            right.unlock();
+                        }
+
+                    }
+                }finally {
+                    left.unlock();
+                }
+
             }
+
         }
     }
 
@@ -64,7 +90,7 @@ class Zhexuejia extends Thread{
     }
 }
 
-class Kuaizi{
+class Kuaizi extends ReentrantLock {
     private String name;
 
     public Kuaizi(String name) {
