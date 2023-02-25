@@ -1,4 +1,4 @@
-package jiaoti
+package Jiaoti
 
 public class ABC {
 
