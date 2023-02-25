@@ -1,3 +1,5 @@
+package Jiaoti;
+
 public class ABC {
 
     static boolean printA = true;
