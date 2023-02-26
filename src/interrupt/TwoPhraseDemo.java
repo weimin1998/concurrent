@@ -1,6 +1,6 @@
 package interrupt;
 
-public class StopDemo {
+public class TwoPhraseDemo {
 
 
     // 两阶段终止模式
