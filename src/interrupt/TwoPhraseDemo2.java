@@ -56,6 +56,7 @@ class Monitor2{
 
     public void stop(){
         run = false;
+        // 如果正在sleep的时间比较长，但是想让现在就停止
         monitorThread.interrupt();
     }
 }
