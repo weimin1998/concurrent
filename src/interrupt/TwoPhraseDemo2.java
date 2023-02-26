@@ -1,6 +1,6 @@
 package interrupt;
 
-public class StopDemo2 {
+public class TwoPhraseDemo2 {
     /*
     * volatile 实现两阶段终止
     * */
